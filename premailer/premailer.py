@@ -133,8 +133,7 @@ class Premailer(object):
             if bulk.endswith(';'):
                 bulk = bulk[:-1]
             for selector in (x.strip() for
-                             x in selectors.split(',') if x.strip() and
-                             not x.strip().startswith('@')):
+                             x in selectors.split(',') if x.strip()):
 
                 if (':' in selector and self.exclude_pseudoclasses and
                     ':' + selector.split(':', 1)[1]
